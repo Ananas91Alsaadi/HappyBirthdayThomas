@@ -11,7 +11,7 @@ function preload() {
   m=loadSound("Brilliant Fireworks - Whistling.mp3");
 }
 function setup() {
-  createCanvas(700, 400);
+  createCanvas(windowWidth, windowHeight);
   colorMode(HSB);
   gravity = createVector(0, 0.2);
   stroke(255);
@@ -20,7 +20,13 @@ function setup() {
   m.play();
 }
 
+function  windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
+
 function draw() {
+
   colorMode(RGB);
   background(30, 30, 70,25);
   
@@ -52,9 +58,10 @@ function draw() {
       fireworks.splice(i, 1);
     }
   }
+textAlign(CENTER);
     textSize(BS);
-  text("HAPPY BIRTHDAY!!!",100,100);
-    text("THOMAS",200,200);
+  text("HAPPY BIRTHDAY!!!",width/2,100);
+    text("THOMAS",width/2,200);
 
 
 }
